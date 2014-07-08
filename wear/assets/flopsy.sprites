@@ -1,0 +1,55 @@
+
+flopsy.png
+size: 674,446
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+andy
+  rotate: false
+  xy: 2, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+andy
+  rotate: false
+  xy: 432, 324
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+andy
+  rotate: false
+  xy: 68, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+bg
+  rotate: false
+  xy: 2, 68
+  size: 320, 320
+  orig: 320, 320
+  offset: 0, 0
+  index: -1
+ground
+  rotate: false
+  xy: 2, 390
+  size: 672, 56
+  orig: 672, 56
+  offset: 0, 0
+  index: -1
+pipe
+  rotate: false
+  xy: 324, 68
+  size: 52, 320
+  orig: 52, 320
+  offset: 0, 0
+  index: 1
+pipe
+  rotate: false
+  xy: 378, 68
+  size: 52, 320
+  orig: 52, 320
+  offset: 0, 0
+  index: 2

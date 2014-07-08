@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="GdxTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:buttonStyle">@style/RoundButton</item>
+        <item name="android:imageButtonStyle">@style/RoundButton</item>
+    </style>
+
+    <style name="RoundButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/wear_button_bg</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+</resources>

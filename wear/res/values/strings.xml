@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_about">About</string>
+    <string name="title_highscore">Highscore</string>
+    <string name="app_name">Flopsy Droid</string>
+    <string name="label_score_best">Best Score</string>
+    <string name="title_game">Game</string>
+    <string name="action_start">Start Game</string>
+    <string name="new_highscore">Congrats, new Highscore! %d Pts.</string>
+    <string name="about_desc">Floppsy Droid\n\nFlying Droids on your Android Wear device.\n\nHacked together by\nSebastian Mauer</string>
+</resources>

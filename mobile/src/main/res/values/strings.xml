@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Flopsy Droid</string>
+    <string name="title_activity_my">Flopsy Droid</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome">Welcome to Flopsy Droid!</string>
+    <string name="description">It\'s a little game inspired by Flappy Bird ported and fine-tuned to be played on an Android Wear Device. The Android Wear App should have silently installed Flopsy Droid on your Wearable when you\'ve installed this App on your Smartphone.\n\nYou can find the code of Flopsy Droid here:\nhttp://www.github.com/mauimauer/flopsydroid\n\nPro-Tip: Click the blue bubble on the left to start Flopsy Droid on your Wearable. Alternative use the \"OK Google, Start Flopsy Droid\" Voice Command on your Wearable.\n\nFind me on Google+:\nhttps://plus.google.com/+SebastianMauer</string>
+    <string name="third">Flopy Droid is an Experiment and made possible by Open Source.\nThis game and the sourcecode is made available on Github. Use it to learn and improve your Android Developer skills, don\'t be a douche and try to sell this work.\n\n\nResources and Idea:\nhttp://lanica.co/flappy-clone/\n\nUsing libGDX by Bad Logic Games. Licensed under the Terms of\nthe Apache 2.0 License\nhttp://www.apache.org/licenses/LICENSE-2.0.html</string>
+
+</resources>

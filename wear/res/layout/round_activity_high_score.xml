@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.stefanhoth.android.got2048.activities.HighScoreActivity"
+    tools:deviceIds="wear_round">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="32dip"
+                android:layout_height="32dip" android:src="@drawable/ic_won" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/label_score_best" />
+            </LinearLayout>
+        <TextView
+            android:id="@+id/highscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:textSize="33sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="" />
+        </LinearLayout>
+
+</RelativeLayout>

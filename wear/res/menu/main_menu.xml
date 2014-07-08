@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_game" android:title="@string/action_start" android:id="@+id/start_game"></item>
+    <item android:id="@+id/highscore" android:icon="@drawable/ic_won" android:title="@string/title_highscore"></item>
+    <item android:id="@+id/about" android:icon="@drawable/ic_about" android:title="@string/title_about"></item>
+</menu>
