@@ -11,7 +11,7 @@ import at.maui.flopsydroid.android.activities.MenuActivity;
  * Created by maui on 08.07.2014.
  */
 public class DeviceDataListenerService extends WearableListenerService {
-    private static final String START_ACTIVITY_PATH = "/floppsydroid/wear";
+    private static final String START_ACTIVITY_PATH = "/flopsydroid/wear";
 
     @Override
     public void onMessageReceived(MessageEvent messageEvent) {

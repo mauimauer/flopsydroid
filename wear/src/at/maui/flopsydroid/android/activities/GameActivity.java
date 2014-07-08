@@ -3,6 +3,7 @@ package at.maui.flopsydroid.android.activities;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.widget.Toast;
 
@@ -16,6 +17,8 @@ public class GameActivity extends AndroidApplication {
 
     private SharedPreferences mPreferences;
 
+    private Handler mHandler = new Handler();
+
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,13 +30,18 @@ public class GameActivity extends AndroidApplication {
 
 		initialize(new FlopsyDroidGame(new OnGlobalListener() {
             @Override
-            public void onGameOver(int score) {
+            public void onGameOver(final int score) {
                 vibrator.vibrate(1000);
 
                 int highScore = mPreferences.getInt("highscore", 0);
                 if(score > highScore) {
                     mPreferences.edit().putInt("highscore", score).commit();
-                    Toast.makeText(GameActivity.this, getString(R.string.new_highscore, score), Toast.LENGTH_LONG).show();
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(GameActivity.this, getString(R.string.new_highscore, score), Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
             }
 
