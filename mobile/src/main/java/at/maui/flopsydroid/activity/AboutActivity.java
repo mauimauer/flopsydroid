@@ -1,13 +1,14 @@
-package at.maui.flopsydroid;
+package at.maui.flopsydroid.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.wearable.MessageApi;
@@ -16,11 +17,13 @@ import com.google.android.gms.wearable.NodeApi;
 import com.google.android.gms.wearable.Wearable;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import at.maui.flopsydroid.R;
 
-public class MyActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class AboutActivity extends FlopsyDroidActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
+    private static final String TAG = "AboutActivity";
     private GoogleApiClient mGoogleAppiClient;
 
     ImageView mBtnOnWearable;
@@ -28,7 +31,7 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.activity_about);
 
         mBtnOnWearable = (ImageView) findViewById(R.id.startWearable);
         mBtnOnWearable.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +66,7 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -102,7 +105,7 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
 
     @Override
     public void onConnected(Bundle bundle) {
-
+        Log.d(TAG, "Connected to Google Services");
     }
 
     @Override
@@ -112,22 +115,27 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
+        Log.e(TAG, "Connection to GMS failed. "+GooglePlayServicesUtil.getErrorString(connectionResult.getErrorCode()));
 
+        if(connectionResult.getErrorCode() == ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED) {
+            GooglePlayServicesUtil.showErrorDialogFragment(connectionResult.getErrorCode(), this, 123);
+        }
     }
 
     private void getNodes(final OnGotNodesListener cb) {
-        Wearable.NodeApi.getConnectedNodes(getGoogleApiClient()).setResultCallback(new ResultCallback<NodeApi.GetConnectedNodesResult>() {
-            @Override
-            public void onResult(NodeApi.GetConnectedNodesResult nodes) {
-                ArrayList<String> results= new ArrayList<String>();
+        Wearable.NodeApi.getConnectedNodes(getGoogleApiClient())
+                .setResultCallback(new ResultCallback<NodeApi.GetConnectedNodesResult>() {
+                    @Override
+                    public void onResult(NodeApi.GetConnectedNodesResult nodes) {
+                        ArrayList<String> results = new ArrayList<String>();
 
-                for (Node node : nodes.getNodes()) {
-                    if(!results.contains(node.getId())) results.add(node.getId());
-                }
+                        for (Node node : nodes.getNodes()) {
+                            if (!results.contains(node.getId())) results.add(node.getId());
+                        }
 
-                cb.onGotNodes(results);
-            }
-        });
+                        cb.onGotNodes(results);
+                    }
+                }, 3, TimeUnit.SECONDS);
     }
 
     public interface OnGotNodesListener {

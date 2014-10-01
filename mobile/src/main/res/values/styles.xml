@@ -1,8 +1,13 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="FlopsyDroidTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/FlopsyDroidTheme.ActionBar</item>
+    </style>
+
+    <style name="FlopsyDroidTheme.ActionBar" parent="android:Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_background</item>
     </style>
 
 </resources>
