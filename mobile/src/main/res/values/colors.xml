@@ -8,4 +8,6 @@
     <color name="green">#ff21c129</color>
     <color name="red">#ffc10e05</color>
     <color name="grey">#ffc1c0c0</color>
+    <color name="flopsy_green">#66cc33</color>
+    <color name="green_dark">#ff07aa26</color>
 </resources>

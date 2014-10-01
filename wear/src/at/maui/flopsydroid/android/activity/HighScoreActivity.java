@@ -1,4 +1,4 @@
-package at.maui.flopsydroid.android.activities;
+package at.maui.flopsydroid.android.activity;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
