@@ -45,6 +45,7 @@ project(":wear") {
 
     dependencies {
         compile project(":core")
+        compile project(':common')
         compile 'com.android.support:support-v4:+'
         compile 'com.google.android.support:wearable:+'
         compile 'com.google.android.gms:play-services-wearable:+'

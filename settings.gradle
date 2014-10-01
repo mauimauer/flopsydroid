@@ -1,1 +1,2 @@
+include ':common'
 include 'desktop', 'mobile', 'wear', 'core'
